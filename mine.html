@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI组件之浮出层</title>
+    <style type="text/css">
+        body{
+            position: relative;
+        }
+        #cover{
+            position: absolute;
+            display: none;
+            border: 1px solid #999999;
+            width: 600px;
+            height: 400px;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #2a2e3d;
+            color: #FFFFFF;
+            font-size: 18px;
+
+        }
+        #box{
+            display: none;
+            border: 1px solid #999;
+            background: white;
+            color: #000;
+            font-size: 18px;
+            position: absolute;
+            width: 600px;
+            height: 350px;
+            top:50px;
+            left: 0;
+        }
+        #close{
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            border: none;
+            background: #2B2E3D;
+            color: whitesmoke;
+            left: 500px;
+            top:300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cover">
+        这是一个浮出层
+        <div id="box">这是一个浮出层
+            <button type="button" id="close">关闭</button>
+        </div>
+    </div>
+    <button type="button" id="show">浮出层</button>
+    <div class="context">
+        <p> 错过了好几次台湾行，有一次连台证都办好了，机票也定了，<br>
+            但是因为时间的原因不得已取消了行程。<br>
+            想去台湾，不是因为他的风景，而是从小受到的教育，让这个地方充满了一种神秘感。当然不得不承认<br>
+            ，雄壮的阿里山，美丽的日月潭，也是吸引我的一个主要因素。</p>
+        <p> 出国旅行很多人会选择购物团，尤其是台湾、韩国和东南亚，毕竟购物团的价格非常低，确实是很吸引人的。<br>
+            但是现在购物团的口碑非常不好，国内的云南跟团游和香港的0团费购物团估计很多人都经历过，或者听说过，<br>
+            完全就是明目张胆的坑蒙拐骗。</p>
+        <p>国外的购物团相对来说要好一些，我们去过韩国济州岛和首尔，感觉还是不错的，起码导游不像国内购物团那样穷凶极恶。<br>
+            去之前在网上也看了一些游记，提到了台湾虽然购物也比较夸张，但是导游还是比较温和的，<br>
+            所以我们最后还是选择了跟团游。<br>
+            其实购物并不是太大的问题，因为出去旅游多少少都会买一些当地的东西，关键还是买的东西是不是自己想要的<br>
+            ，而价格是不是太离谱，还有诱导购物所用的手段不要太赤裸裸的恐吓和侮辱，这样的话还是可以接受的。</p>
+        <p>无论是自由行还是跟团游，台湾都是值得一去的。<br>
+            这里的风光虽然算不上绝美，但毕竟也有着宝岛的特色，台湾说大不大，<br>
+            说小也不小，从台北到高雄，从台中到台东，从垦丁到花莲，从城市到乡村，<br>
+            从高山到大海，每个地方都有着不同的风情，<br>
+            值得细细品味。</p>
+        <p>天津滨海机场起飞，三个小时就可以到桃园机场。<br>
+            飞机就要降落了，还是不敢相信自己就这样轻松的来到台湾，<br>
+            这可是从小就充满了神秘感的地方，也是和我们长期处于隔绝状态的地方，两岸的直航也是到了2008年才开始的。<br>
+            等到真正到了这里，曾经很神秘的地方也就不觉得是那么神秘了。</p>
+        p> 错过了好几次台湾行，有一次连台证都办好了，机票也定了，<br>
+        但是因为时间的原因不得已取消了行程。<br>
+        想去台湾，不是因为他的风景，而是从小受到的教育，让这个地方充满了一种神秘感。当然不得不承认<br>
+        ，雄壮的阿里山，美丽的日月潭，也是吸引我的一个主要因素。</p>
+        <p> 出国旅行很多人会选择购物团，尤其是台湾、韩国和东南亚，毕竟购物团的价格非常低，确实是很吸引人的。<br>
+            但是现在购物团的口碑非常不好，国内的云南跟团游和香港的0团费购物团估计很多人都经历过，或者听说过，<br>
+            完全就是明目张胆的坑蒙拐骗。</p>
+        <p>国外的购物团相对来说要好一些，我们去过韩国济州岛和首尔，感觉还是不错的，起码导游不像国内购物团那样穷凶极恶。<br>
+            去之前在网上也看了一些游记，提到了台湾虽然购物也比较夸张，但是导游还是比较温和的，<br>
+            所以我们最后还是选择了跟团游。<br>
+            其实购物并不是太大的问题，因为出去旅游多少少都会买一些当地的东西，关键还是买的东西是不是自己想要的<br>
+            ，而价格是不是太离谱，还有诱导购物所用的手段不要太赤裸裸的恐吓和侮辱，这样的话还是可以接受的。</p>
+        <p>无论是自由行还是跟团游，台湾都是值得一去的。<br>
+            这里的风光虽然算不上绝美，但毕竟也有着宝岛的特色，台湾说大不大，<br>
+            说小也不小，从台北到高雄，从台中到台东，从垦丁到花莲，从城市到乡村，<br>
+            从高山到大海，每个地方都有着不同的风情，<br>
+            值得细细品味。</p>
+        <p>天津滨海机场起飞，三个小时就可以到桃园机场。<br>
+            飞机就要降落了，还是不敢相信自己就这样轻松的来到台湾，<br>
+            这可是从小就充满了神秘感的地方，也是和我们长期处于隔绝状态的地方，两岸的直航也是到了2008年才开始的。<br>
+            等到真正到了这里，曾经很神秘的地方也就不觉得是那么神秘了。</p>
+
+    </div>
+
+
+<script type="text/javascript">
+    var cover=getId('cover');
+    var box=getId('box');
+    var btn=getId('show');
+    var close=getId('close');
+    function getId(id) {
+        return document.getElementById(id);
+    }
+    show.onclick=function () {
+        box.style.display="block";
+        cover.style.display="block";
+        cover.style.position="fixed";
+        document.getElementsByTagName('body')[0].style.background="#9d9d9d";
+    }
+    close.onclick=function () {
+            box.style.display = "none";
+            cover.style.display = "none";
+            document.getElementsByTagName('body')[0].style.background = "white";
+    }
+    /*onmousedown 用来实现 点击浮出层以外的部分，默认为关闭浮出层*/
+
+    /*if(cover.onmousedown){
+       alert('ok');
+    }else{
+        document.getElementsByTagName('body')[0].onmousedown=function (){
+            box.style.display = "none";
+            cover.style.display = "none";
+            document.getElementsByTagName('body')[0].style.background = "white";
+        }
+
+    }*/
+    var flag=true;
+    document.getElementsByTagName('body')[0].onmousedown=function (){
+        cover.onmousedown=function () {
+            flag=false;
+        }
+        if(flag){
+            box.style.display = "none";
+            cover.style.display = "none";
+            document.getElementsByTagName('body')[0].style.background = "white";
+        }
+    }
+
+
+    
+    
+</script>
+</body>
+</html>

@@ -21,6 +21,13 @@
             font-size: 18px;
 
         }
+        #mask{
+            position: absolute;
+            display: none;
+            height: 100%;
+            width: 100%;
+            opacity: 0.4;
+        }
         #box{
             display: none;
             border: 1px solid #999;
@@ -46,13 +53,14 @@
     </style>
 </head>
 <body>
+    <div id="mask"></div>
     <div id="cover">
-        这是一个浮出层
-        <div id="box">这是一个浮出层
+        <div id="box">
+            <h2>这是一个浮出层</h2>
             <button type="button" id="close">关闭</button>
         </div>
     </div>
-    <button type="button" id="show">浮出层</button>
+    <button type="button" id="show">点我，发现新世界</button>
     <div class="context">
         <p> 错过了好几次台湾行，有一次连台证都办好了，机票也定了，<br>
             但是因为时间的原因不得已取消了行程。<br>
@@ -105,47 +113,35 @@
     var box=getId('box');
     var btn=getId('show');
     var close=getId('close');
+    var mask=getId('mask');
+
     function getId(id) {
         return document.getElementById(id);
     }
-    show.onclick=function () {
+
+
+    btn.onclick=function () {
+        mask.style.display="block"
         box.style.display="block";
         cover.style.display="block";
         cover.style.position="fixed";
-        document.getElementsByTagName('body')[0].style.background="#9d9d9d";
     }
     close.onclick=function () {
-            box.style.display = "none";
-            cover.style.display = "none";
-            document.getElementsByTagName('body')[0].style.background = "white";
+        mask.style.display="none"
+        box.style.display="none";
+        cover.style.display="none";
+        cover.style.position="absolute";
     }
+
     /*onmousedown 用来实现 点击浮出层以外的部分，默认为关闭浮出层*/
-
-    /*if(cover.onmousedown){
-       alert('ok');
-    }else{
-        document.getElementsByTagName('body')[0].onmousedown=function (){
-            box.style.display = "none";
-            cover.style.display = "none";
-            document.getElementsByTagName('body')[0].style.background = "white";
-        }
-
-    }*/
-    var flag=true;
-    document.getElementsByTagName('body')[0].onmousedown=function (){
-        cover.onmousedown=function () {
-            flag=false;
-        }
-        if(flag){
-            box.style.display = "none";
-            cover.style.display = "none";
-            document.getElementsByTagName('body')[0].style.background = "white";
-        }
+    mask.onmousedown=function () {
+        mask.style.display="none"
+        box.style.display="none";
+        cover.style.display="none";
+        cover.style.position="absolute";
     }
 
 
-    
-    
 </script>
 </body>
 </html>
